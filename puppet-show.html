@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10100f">
+ <title>Puppet Story Studio · Puppet show</title><link rel="stylesheet" href="style.css">
+</head>
+<body class="show-view">
+ <main>
+  <section class="studio show-studio">
+   <aside class="input-panel">
+    <div class="panel-title cast-title"><div><small>CAST</small><h2>Characters</h2></div><span id="castTotal" class="count">—</span></div>
+    <div id="castList" class="cast-list"></div>
+    <div class="map-summary" id="mapSummary"><span class="map-dot"></span>Preparing show…</div>
+    <div class="show-actions"><button id="generate" class="generate"><span class="gen-icon">↻</span><span><b>Generate again</b><small>Current story</small></span></button></div>
+   </aside>
+   <section class="output-panel">
+    <div class="output-header"><div class="show-heading"><a class="back-link" href="index.html" aria-label="Back to story input">← <span>Story input</span></a><div><small>LIVE SHOW</small><h2>Puppet show</h2></div></div><div class="output-state" id="outputState"><i></i><span>PREPARING SHOW</span></div></div>
+    <div class="stage-shell"><div class="stage-lights"><i></i><i></i><i></i></div><canvas id="stage" width="1280" height="720" aria-label="Traditional Indian puppet show"></canvas><div class="stage-overlay" id="stageOverlay"><span class="lamp">✦</span><b>Preparing your show…</b></div><div id="loadingOverlay" class="loading-overlay hidden"><span class="spinner"></span><b id="loadingText">Preparing the performance…</b><small id="loadingSub">Reading story</small></div></div>
+    <div class="player-bar"><button id="playPause" disabled aria-label="Pause or resume show">▶</button><div class="player-progress"><i id="playerProgress"></i></div><span id="playerTime">0:00 / 0:00</span></div>
+    <div class="performance-info"><div><small>ACTS</small><b id="actCount">—</b></div><div><small>AUDIO</small><b id="voiceInfo">Preparing</b></div></div><div class="timeline-head"><div><small>STORY ACTS</small><b>Timeline</b></div><span id="coverage"></span></div><div class="act-timeline" id="actTimeline"><div class="empty-act">Mapping acts…</div></div>
+   </section>
+  </section>
+ </main>
+
+ <div id="toast" role="status" class="toast"></div>
+ <script src="app.js?v=20261018-browser-speech"></script>
+</body>
+</html>
