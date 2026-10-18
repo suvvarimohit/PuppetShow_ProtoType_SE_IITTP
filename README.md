@@ -2,16 +2,25 @@
 
 A browser app that maps an uploaded or pasted story to a live traditional Indian puppet-show performance with spoken dialogue and movement.
 
-## Run on Windows, macOS, or Linux
+## Run the hosted app (macOS/Linux, no Python)
+
+Once GitHub Pages is enabled for the repository, open:
+
+`https://suvvarimohit.github.io/PuppetShow_ProtoType_SE_IITTP/`
+
+On macOS or Linux, `sh ./start-macos-linux.sh` opens the hosted app in the default browser. It needs an internet connection, but no Python, packages, or local server. Browser speech uses the voices available on that device.
+
+To publish updates, the repository owner must enable **Settings → Pages → Build and deployment → GitHub Actions** once. After that, pushes to `main` deploy automatically. The first deployment can take a few minutes.
+
+## Run locally on Windows
 
 Start the app using the script for your computer:
 
 - Windows: double-click `start-windows.bat`. It uses built-in Windows PowerShell and does not require Python.
-- macOS/Linux: install Python 3.9 or newer, then in a terminal in this folder run `sh ./start-macos-linux.sh`.
 
-No extra packages are installed. The Windows server uses built-in PowerShell; the macOS/Linux server uses Python's standard library. Speech uses the browser's built-in Web Speech API; available voices, languages, and voice quality depend on the browser and device. Keep the terminal window open and visit `http://127.0.0.1:4174` in a recent browser.
+Speech uses the browser's built-in Web Speech API; available voices, languages, and voice quality depend on the browser and device.
 
-To use the app from a phone or tablet on the same Wi-Fi network, open `http://<computer-ip>:4174` in its browser. Keep the computer running the server; the phone/tablet is the browser client.
+The hosted app can be opened directly on phones, tablets, and computers with internet access.
 
 ## Two-page flow
 
@@ -36,8 +45,10 @@ To use the app from a phone or tablet on the same Wi-Fi network, open `http://<c
 - `index.html`, `input.js`: story input and conversion estimate.
 - `puppet-show.html`, `app.js`, `style.css`: cast mapping, show rendering, and playback.
 - `server.ps1`: Windows local web server using built-in PowerShell.
-- `server.py`: macOS/Linux local web server using Python's standard library.
-- `start-windows.bat`, `start-macos-linux.sh`: platform launch scripts; no Python packages are installed.
+- `server.py`: optional local server using Python's standard library.
+- `start-windows.bat`: Windows local launcher; does not require Python.
+- `start-macos-linux.sh`: opens the hosted app; does not require Python.
+- `.github/workflows/pages.yml`: publishes the static app to GitHub Pages after Pages is enabled.
 - `assets/puppets/`, `assets/backgrounds/`: reusable puppet figures and illustrated scenes.
 - No default story or bundled sample-story files.
 
